@@ -15,13 +15,7 @@ For each indexed configuration, the method combines:
 - **Rotation:** 32 selector states representing 24 distinct cubic orientations.
 - **Translation:** 512 cyclic translations on a Cartesian lattice.
 
-Receptor interaction maps and ligand charge/occupancy grids are represented on a **32 × 32 × 32** spatial lattice with eight channels (`e`, `A`, `C`, `HD`, `N`, `NA`, `OA`, `S`). The physical representation uses 18 qubits; an auxiliary qubit extends the encoded data register to **19 qubits**. A normalized interaction amplitude is defined as
-
-\[
-A_0=\frac{E+E_+}{L_U L_N},
-\]
-
-where `E` is the selected grid-interaction score and `E_+`, `L_U`, and `L_N` are the energy offset and normalization factors. Configurations qualify when `A₀ < A₀,thr`.
+Receptor interaction maps and ligand charge/occupancy grids are represented on a **32 × 32 × 32** spatial lattice with eight channels (`e`, `A`, `C`, `HD`, `N`, `NA`, `OA`, `S`). The physical representation uses 18 qubits; an auxiliary qubit extends the encoded data register to **19 qubits**.
 
 The logical workflow is:
 
