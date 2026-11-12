@@ -15,15 +15,6 @@ For each indexed configuration, the method combines:
 - **Rotation:** 32 selector states representing 24 distinct cubic orientations.
 - **Translation:** 512 cyclic translations on a Cartesian lattice.
 
-The resulting search space contains
-
-\[
-N_{\mathrm{search}}=2\times N_{\mathrm{OCC}}\times32\times512
-=32{,}768\,N_{\mathrm{OCC}},
-\]
-
-or **32,768 to 33,554,432 indexed configurations** per receptor system.
-
 Receptor interaction maps and ligand charge/occupancy grids are represented on a **32 × 32 × 32** spatial lattice with eight channels (`e`, `A`, `C`, `HD`, `N`, `NA`, `OA`, `S`). The physical representation uses 18 qubits; an auxiliary qubit extends the encoded data register to **19 qubits**. A normalized interaction amplitude is defined as
 
 \[
