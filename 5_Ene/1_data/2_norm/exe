@@ -1,0 +1,3 @@
+python comb.py ../1_ori/map ../1_ori/occ . \
+  --device cuda
+

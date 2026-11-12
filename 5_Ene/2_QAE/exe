@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+python energy.py ../1_data/2_norm/ out \
+    --eval-qubits 10 11 12 13 14 15 16 17 18 19 20 21 22 \
+    --resolution-multiples 1 2 4 8 \
+    --retrieval-mode pose \
+    --grover-max auto \
+    --max-occ 1024 \
+    --device cuda \
+    --skip-circuit

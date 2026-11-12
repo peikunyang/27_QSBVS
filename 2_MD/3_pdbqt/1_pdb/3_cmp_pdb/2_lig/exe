@@ -1,0 +1,2 @@
+python comp.py --ref_dir ../../3_lig/pdb --target_dir ../../1_comp/pdb
+

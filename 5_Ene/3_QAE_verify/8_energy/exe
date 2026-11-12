@@ -1,0 +1,12 @@
+for pdb in 1ecq 1h0r 2aa9 2q9y 2ybk 2ybs 4gui 6o4x; do
+  for state in 0 1; do
+    python verify_energy.py \
+      --input-root ../../1_data/2_norm \
+      --qae-script ../../2_QAE/energy.py \
+      --pdbid "$pdb" \
+      --state "$state" \
+      --max-occ 1024 \
+      --device cuda
+  done
+done
+

@@ -1,0 +1,8 @@
+python ene.py \
+  --map_root ../2_map/map \
+  --occ_root ../3_occ/1_chg/occ \
+  --decoy_root ../3_occ/1_chg/occ_decoy \
+  --out_dir E \
+  --top 100 \
+  --device cuda
+

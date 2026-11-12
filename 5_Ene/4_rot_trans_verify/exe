@@ -1,0 +1,2 @@
+python verify_rot_trans_29q.py --mode full --positions 4 --workers 4
+

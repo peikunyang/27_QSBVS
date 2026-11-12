@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+DATA=""
+SUPPLEMENT=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --supplement-docx)
+      if [[ $# -lt 2 ]]; then echo 'Missing --supplement-docx path' >&2; exit 2; fi
+      SUPPLEMENT="$2"; shift 2 ;;
+    -h|--help)
+      printf 'Usage: ./exe [/ABS/PATH/2_QAE/out] [--supplement-docx /ABS/PATH/YOUR_LATEST_SUP.docx]\n'
+      exit 0 ;;
+    -* ) echo "Unknown option: $1" >&2; exit 2 ;;
+    * ) if [[ -n "$DATA" ]]; then echo 'Multiple data directories provided' >&2; exit 2; fi
+        DATA="$1"; shift ;;
+  esac
+done
+if [[ -z "$DATA" ]]; then
+  if [[ -n "${QAE_DATA_ROOT:-}" ]]; then DATA="$QAE_DATA_ROOT"; fi
+fi
+if [[ -z "$DATA" ]]; then
+  for d in "$ROOT/../2_QAE/out" "$ROOT/../5_Ene/2_QAE/out"; do
+    if [[ -f "$d/batch_summary_pose.tsv" ]]; then DATA="$d"; break; fi
+  done
+fi
+if [[ -z "$DATA" ]]; then
+  echo 'Missing input data. Run: ./exe /ABS/PATH/2_QAE/out' >&2
+  exit 2
+fi
+if [[ -n "$SUPPLEMENT" ]]; then
+  exec "$ROOT/run_all.sh" "$DATA" "$SUPPLEMENT"
+else
+  exec "$ROOT/run_all.sh" "$DATA"
+fi

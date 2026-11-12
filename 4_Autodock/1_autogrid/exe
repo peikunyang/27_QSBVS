@@ -1,0 +1,2 @@
+python map.py -i ../../2_MD/3_pdbqt/2_super/5_type_limit/2_sel/pdbqt -o map --param AD4_parameters.dat
+

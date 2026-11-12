@@ -1,0 +1,5 @@
+python gen_map_occ.py \
+  --grid-size 4 \
+  --threshold 0.02 \
+  --output map_occ
+

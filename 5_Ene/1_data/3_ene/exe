@@ -1,0 +1,9 @@
+mkdir -p ene
+
+for d in ../2_norm/*; do
+    [ -d "$d" ] || continue
+    pdbid=$(basename "$d")
+    echo "===== $pdbid ====="
+    python ene.py "$d" "ene/$pdbid" --device cuda
+done
+

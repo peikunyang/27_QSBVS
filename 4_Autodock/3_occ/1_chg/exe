@@ -1,0 +1,3 @@
+#python chg.py -i ../../../2_MD/3_pdbqt/2_super/5_type_limit/2_sel/pdbqt -o occ
+python chg.py -i ../../../3_decoy/2_center/2_shift_half/lig -o occ_decoy
+

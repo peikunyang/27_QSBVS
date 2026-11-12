@@ -1,0 +1,2 @@
+python energy.py ../../1_data/2_norm/ out --test-rot --device cuda > log
+

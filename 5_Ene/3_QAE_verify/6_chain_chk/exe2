@@ -1,0 +1,5 @@
+python energy.py ../../1_data/2_norm/ out2 \
+    --test-real-chain \
+    --real-chain-occ 1024 \
+    --device cuda > log2
+

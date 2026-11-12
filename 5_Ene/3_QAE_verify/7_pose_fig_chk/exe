@@ -1,0 +1,7 @@
+mkdir -p out
+
+python check_pose_figures.py \
+    ../6_chain_chk/out2/real_chain_check.txt \
+    ../../2_QAE/out \
+    --output out/pose_figure_check.txt > log
+

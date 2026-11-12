@@ -1,0 +1,2 @@
+python sel.py ../../2_len/dim ./ 7 > log
+

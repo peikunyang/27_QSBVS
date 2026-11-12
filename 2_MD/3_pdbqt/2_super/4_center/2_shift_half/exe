@@ -1,0 +1,2 @@
+python shift.py -i ../1_cen/pdbqt -o pdbqt
+

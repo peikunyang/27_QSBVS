@@ -1,0 +1,27 @@
+mini_nstep = 5000
+mini_Tol   = 100.0
+
+nstep      = 0
+dt         = 0.002
+
+nstout     = 1000
+nstdcd     = 50000
+
+coulomb    = PME
+ewald_Tol  = 0.0005
+vdw        = Force-switch
+r_on       = 0.8
+r_off      = 1.0
+
+temp       = 303.15
+fric_coeff = 1
+
+pcouple    = no
+p_ref      = 1.0
+p_type     = isotropic
+p_freq     = 100
+
+cons       = HBonds
+rest       = no
+gen_vel    = no
+

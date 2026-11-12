@@ -1,0 +1,18 @@
+#!/bin/bash
+init="step3_input"
+equi_prefix="step4_equilibration"
+prod_prefix="step5_production"
+prod_step="step5"
+input_param="-t toppar.str -p ${init}.psf -c ${init}.crd -b sysinfo.dat"
+start_time=$(date +%s)
+python -u ../../public/openmm_run.py -i ${equi_prefix}.inp ${input_param} -orst ${equi_prefix}.rst -opdb ${equi_prefix}.pdb > ${equi_prefix}.out
+input_param="-t toppar.str -p ${init}.psf -c ${init}.crd -irst ${equi_prefix}.rst"
+python -u ../../public/openmm_run.py -i ${prod_prefix}.inp ${input_param} -orst ${prod_step}.rst -opdb ${prod_step}.pdb -odcd ${prod_step}.dcd > ${prod_step}.out
+end_time=$(date +%s)
+execution_time=$((end_time - start_time))
+execution_time_hours=$((execution_time / 3600))
+execution_time_minutes=$(( (execution_time % 3600) / 60 ))
+execution_time_seconds=$((execution_time % 60))
+echo "Execution time: $execution_time_hours hours, $execution_time_minutes minutes, $execution_time_seconds seconds"
+
+

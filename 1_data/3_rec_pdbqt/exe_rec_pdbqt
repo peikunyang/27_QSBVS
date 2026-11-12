@@ -1,0 +1,20 @@
+MGL=/home/kun/package/MGLTools/mgltools_x86_64Linux2_1.5.7
+SCRIPT=$MGL/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor4.py
+
+mkdir -p ./pdbqt
+
+for d in ../2_PDBbind/*; do
+    [ -d "$d" ] || continue
+
+    pdbid=$(basename "$d")
+    pdb="$d/${pdbid}_protein.pdb"
+    out="./pdbqt/${pdbid}_protein.pdbqt"
+
+    if [ -f "$pdb" ]; then
+        echo "[OK] $pdbid"
+        $MGL/bin/pythonsh "$SCRIPT" -r "$pdb" -o "$out"
+    else
+        echo "[MISS] $pdbid"
+    fi
+done
+
