@@ -46,7 +46,7 @@ QAE/QPE -> QCOMP -> FLAG
        Candidate ligand / receptor / pose index
 ```
 
-The method targets **candidate index retrieval**, not reconstruction of all numerical interaction scores. The AutoDock grid terms provide a controlled proof-of-concept interaction model; they are **not** rigorous binding free energies or the full AutoDock4 scoring function.
+The method targets **candidate index retrieval**, not reconstruction of all numerical interaction scores. The AutoDock grid terms provide a controlled proof-of-concept interaction model.
 
 ## Repository structure
 
