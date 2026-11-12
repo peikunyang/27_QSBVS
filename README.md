@@ -4,7 +4,7 @@ Research code accompanying **“Quantum Amplitude Estimation for Ligand and Pose
 
 This repository investigates an **index-first strategy for structure-based virtual screening (SBVS)**. Instead of measuring and reconstructing an interaction score for every receptor–ligand–pose configuration, the framework uses quantum amplitude estimation based on quantum phase estimation (**QAE/QPE**) and a reversible comparator (**QCOMP**) to mark configurations below a screening threshold. Measuring the `FLAG` and selector registers retrieves a candidate ligand and pose index. Optional Grover-style quantum selection (**QSEL**) amplifies the marked subspace.
 
-> **Scope:** The large-library experiments are numerical benchmarks based on FFT-computed grid overlaps and an *ideal, noiseless analytical* QAE/QPE–QCOMP–QSEL model. Separate Qiskit simulations validate reduced-scale circuitry and pose transformations. The repository does **not** demonstrate a fully fault-tolerant, gate-decomposed, end-to-end quantum screening implementation or a quantum-hardware speedup.
+> **Scope:** The large-library experiments are numerical benchmarks based on FFT-computed grid overlaps and an *ideal, noiseless analytical* QAE/QPE–QCOMP–QSEL model. Separate Qiskit simulations validate reduced-scale circuitry and pose transformations.
 
 ## Research overview
 
